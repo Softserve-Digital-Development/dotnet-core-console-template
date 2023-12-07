@@ -37,15 +37,13 @@ namespace NetCoreConsoleApp.Repositories.Implementation
 
                 ConsoleKeyInfo key = Console.ReadKey(intercept: true);
 
-
                 if (key.Key == ConsoleKey.Enter)
                 {
+                    Console.WriteLine();
                     switch (previousKey)
                     {
                         case ConsoleKey.NumPad1:
                         case ConsoleKey.D1:
-                            Console.WriteLine();
-
                             _log.LogInformation("Running Option 1...");
 
                             /*---DO SOME WORK---*/
@@ -55,8 +53,6 @@ namespace NetCoreConsoleApp.Repositories.Implementation
                             break;
                         case ConsoleKey.NumPad2:
                         case ConsoleKey.D2:
-                            Console.WriteLine();
-
                             _log.LogError("Running Option 2...");
 
                             /*---DO SOME WORK---*/
@@ -66,7 +62,6 @@ namespace NetCoreConsoleApp.Repositories.Implementation
                             break;
                         default:
                             Console.ForegroundColor = ConsoleColor.Red;
-                            Console.WriteLine();
                             Console.WriteLine("Invalid option. Please try a different option.");
                             Console.ForegroundColor = ConsoleColor.White;
                             break;
